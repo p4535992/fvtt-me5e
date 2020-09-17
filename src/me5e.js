@@ -10,7 +10,6 @@ DND5E.skills["veh"] = "Vehicle Handling";
 
 //Add vehicle handling to the character sheet as a skill
 const prep = Actor5e.prototype.prepareBaseData;	
-
 function extendActorData() {
 	const skl = this.data.data.skills;
 	skl["veh"] = skl["veh"] || {value: 0, ability: "dex"};
@@ -22,6 +21,23 @@ Actor5e.prototype.prepareBaseData = extendActorData;
 DND5E.spellSchools["abj"] = "Biotics";
 DND5E.spellSchools["con"] = "Tech";
 DND5E.spellSchools["div"] = "Combat Powers";
+
+//Adding weapon types
+DND5E.weaponTypes["ars"] = "Assault Rifle";
+DND5E.weaponTypes["hps"] = "Heavy Pistol";
+DND5E.weaponTypes["smg"] = "SMG";
+DND5E.weaponTypes["sht"] = "Shotgun";
+DND5E.weaponTypes["snp"] = "Sniper Rifle";
+DND5E.weaponTypes["hvy"] = "Heavy Weapon";
+
+//Adding weapon properties
+DND5E.weaponProperties["arc"] = "Arc";
+DND5E.weaponProperties["bst"] = "Burst Fire";
+DND5E.weaponProperties["dtp"] = "Double Tap";
+DND5E.weaponProperties["het"] = "Heat";
+DND5E.weaponProperties["hip"] = "Hip Fire";
+DND5E.weaponProperties["snt"] = "Silent";
+DND5E.weaponProperties["coi"] = "Recoil";
 
 //Character sheets
 class ME5eCharacterSheet extends ActorSheet5eCharacter {
