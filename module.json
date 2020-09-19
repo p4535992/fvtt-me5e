@@ -1,7 +1,7 @@
 {
 	"name": "me5e",
 	"title": "ME5e",
-	"description": "A module to add support for ME5e to your 5e world",
+	"description": "A module to add support for ME5e, a futuristic sci-fi setting, to your 5e world",
 
 	"esmodules": [
 		"./src/me5e.js"
@@ -13,10 +13,31 @@
 	],
 	"packs": [
 		{
+			"name": "backgrounds-me5e",
+			"label": "Backgrounds (ME5e)",
+			"system": "dnd5e",
+			"path": "./packs/backgrounds-me5e.db",
+			"entity": "Item"
+		},
+		{
 			"name": "classes-me5e",
 			"label": "Classes (ME5e)",
 			"system": "dnd5e",
 			"path": "./packs/classes-me5e.db",
+			"entity": "Item"
+		},
+		{
+			"name": "feats-me5e",
+			"label": "Feats (ME5e)",
+			"system": "dnd5e",
+			"path": "./packs/feats-me5e.db",
+			"entity": "Item"
+		},
+		{
+			"name": "item-catalogue-me5e",
+			"label": "Item Catalogue (ME5e)",
+			"system": "dnd5e",
+			"path": "./packs/item-catalogue-me5e.db",
 			"entity": "Item"
 		},
 		{
@@ -27,11 +48,11 @@
 			"entity": "Item"
 		},
 		{
-			"name": "item-catalogue-me5e",
-			"label": "Item Catalogue (ME5e)",
+			"name": "vehicles-me5e",
+			"label": "Vehicles (ME5e)",
 			"system": "dnd5e",
-			"path": "./packs/item-catalogue-me5e.db",
-			"entity": "Item"
+			"path": "./packs/vehicles-me5e.db",
+			"entity": "Actor"
 		}
 	  ],
 	"dependencies":[
@@ -44,11 +65,11 @@
 
 	"system": "dnd5e",
 	"author": "Parker (sparkcities#2000)",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"minimumCoreVersion": "0.6.5",
 	"compatibleCoreVersion": "0.6.6",
 	"url": "https://github.com/sparkcity/fvtt-me5e",
 	"manifest": "https://raw.githubusercontent.com/sparkcity/fvtt-me5e/master/module.json",
-	"download": "https://github.com/sparkcity/fvtt-me5e/releases/download/v1.0/module.zip",
+	"download": "https://github.com/sparkcity/fvtt-me5e/releases/download/v1.1/module.zip",
 	"readme": "https://github.com/sparkcity/fvtt-me5e/blob/master/README.md"
   }

@@ -8,11 +8,23 @@ DND5E.skills["nat"] = "Engineering";
 DND5E.skills["rel"] = "Science";
 DND5E.skills["veh"] = "Vehicle Handling";
 
-//Add vehicle handling to the character sheet as a skill
+//Adding equipment types
+DND5E.equipmentTypes["prog"] = "Program";
+DND5E.equipmentTypes["armMod"] = "Armor Mod";
+DND5E.equipmentTypes["wepMod"] = "Weapon Mod";
+//Adding consumable types
+DND5E.consumableTypes["wand"] = "Single-Use Program";
+DND5E.consumableTypes["rod"] = "Grenade";
+
+
+//Add vehicle handling to the character sheet as a skill if, and only if, the actor entities being created are of type
+//character or npc. If the type is vehicle, it makes no changes.
 const prep = Actor5e.prototype.prepareBaseData;	
 function extendActorData() {
-	const skl = this.data.data.skills;
-	skl["veh"] = skl["veh"] || {value: 0, ability: "dex"};
+	if(this.data.type === "npc" || this.data.type === "character") {
+		const skl = this.data.data.skills;
+		skl["veh"] = skl["veh"] || {value: 0, ability: "dex"};
+	}
 	return prep.call(this);
 }
 Actor5e.prototype.prepareBaseData = extendActorData;
