@@ -25,6 +25,13 @@
 			"system": "dnd5e",
 			"path": "./packs/spells-me5e.db",
 			"entity": "Item"
+		},
+		{
+			"name": "item-catalogue-me5e",
+			"label": "Item Catalogue (ME5e)",
+			"system": "dnd5e",
+			"path": "./packs/item-catalogue-me5e.db",
+			"entity": "Item"
 		}
 	  ],
 	"dependencies":[
