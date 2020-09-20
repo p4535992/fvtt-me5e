@@ -8,6 +8,16 @@
 
 ## Content
 * 3 Character Sheet Themes: ME5e, Paragon, Renegade
-* Compendiums: Backgrounds, Classes, Feats, Item Catalogue (Weapons, Weapon Mods, Armor Mods, Grenades), Spells, Vehicles
+* Compendiums:
+    * Backgrounds
+    * Classes (with subclasses)
+    * Class Features (with subclass features)
+    * Feats
+    * Item Catalogue (with: weapons, weapon mods, armor mods, grenades, programs, and more)
+    * Racial Features
+    * Spells
+    * Vehicles
+
+(NOTE: Races from ME5e are copyright infringing and will not be included in this module)
 
 ![Image](https://github.com/sparkcity/fvttprojects/blob/master/screenshots/me5e.png?raw=true "ME5e Overview")

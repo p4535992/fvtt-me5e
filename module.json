@@ -27,6 +27,13 @@
 			"entity": "Item"
 		},
 		{
+			"name": "class-features-me5e",
+			"label": "Class Features (ME5e)",
+			"system": "dnd5e",
+			"path": "./packs/class-features-me5e.db",
+			"entity": "Item"
+		},
+		{
 			"name": "feats-me5e",
 			"label": "Feats (ME5e)",
 			"system": "dnd5e",
@@ -38,6 +45,13 @@
 			"label": "Item Catalogue (ME5e)",
 			"system": "dnd5e",
 			"path": "./packs/item-catalogue-me5e.db",
+			"entity": "Item"
+		},
+		{
+			"name": "racial-features-me5e",
+			"label": "Racial Features (ME5e)",
+			"system": "dnd5e",
+			"path": "./packs/racial-features-me5e.db",
 			"entity": "Item"
 		},
 		{
@@ -65,11 +79,11 @@
 
 	"system": "dnd5e",
 	"author": "Parker (sparkcities#2000)",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"minimumCoreVersion": "0.6.5",
 	"compatibleCoreVersion": "0.6.6",
 	"url": "https://github.com/sparkcity/fvtt-me5e",
 	"manifest": "https://raw.githubusercontent.com/sparkcity/fvtt-me5e/master/module.json",
-	"download": "https://github.com/sparkcity/fvtt-me5e/releases/download/v1.1/module.zip",
+	"download": "https://github.com/sparkcity/fvtt-me5e/releases/download/v1.2/module.zip",
 	"readme": "https://github.com/sparkcity/fvtt-me5e/blob/master/README.md"
   }
