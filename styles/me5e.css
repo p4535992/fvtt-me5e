@@ -39,6 +39,10 @@
     background-repeat: no-repeat;
   }
 
+  .dnd5e.sheet.item .sheet-header .item-subtitle .item-status {
+    font-size: 13px;
+    line-height: 24px;
+  }
 
   .flexrow {
     display: flex;

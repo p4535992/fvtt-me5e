@@ -15,7 +15,7 @@ DND5E.equipmentTypes["wepMod"] = "Weapon Mod";
 //Adding consumable types
 DND5E.consumableTypes["wand"] = "Single-Use Program";
 DND5E.consumableTypes["rod"] = "Grenade";
-
+DND5E.consumableTypes["narc"] = "Narcotic";
 
 //Add vehicle handling to the character sheet as a skill if, and only if, the actor entities being created are of type
 //character or npc. If the type is vehicle, it makes no changes.
@@ -60,7 +60,24 @@ DND5E.currencies = {
   //The answer is nothing. The button does nothing now
   DND5E.currencyConversion = {
   };
-  
+
+//Changing and adding some tool proficiencies
+DND5E.toolProficiencies["herb"]="Chemist's Supplies";
+DND5E.toolProficiencies["navg"]="Starship System (Navigation)";
+DND5E.toolProficiencies["pois"]="Brewer's Supplies"
+DND5E.toolProficiencies["aswb"]="Armorsmith's Workbench";
+DND5E.toolProficiencies["cook"]="Cook's Utensils";
+DND5E.toolProficiencies["h4ck"]="Hacking Tools";
+DND5E.toolProficiencies["mdcn"]="Medical Kit";
+DND5E.toolProficiencies["pntr"]="Painter's Supplies";
+DND5E.toolProficiencies["ssdr"]="Starship Systems (Drive)";
+DND5E.toolProficiencies["sshe"]="Starship Systems (Helm)";
+DND5E.toolProficiencies["sssc"]="Starship Systems (SSC)";
+DND5E.toolProficiencies["ssew"]="Starship Systems (EWS)";
+DND5E.toolProficiencies["sswp"]="Starship Systems (Weapons)";
+DND5E.toolProficiencies["tail"]="Tailor's Tools";
+DND5E.toolProficiencies["tink"]="Tinker's Tools";
+DND5E.toolProficiencies["wswb"]="Weaponsmith's Workbench";
 
 //Character sheets
 class ME5eCharacterSheet extends ActorSheet5eCharacter {
