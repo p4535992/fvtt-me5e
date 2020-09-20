@@ -51,6 +51,17 @@ DND5E.weaponProperties["hip"] = "Hip Fire";
 DND5E.weaponProperties["snt"] = "Silent";
 DND5E.weaponProperties["coi"] = "Recoil";
 
+//Changing currencies, all other currencies appear as 0 with no labels
+DND5E.currencies = {
+	"pp": "Credits"
+  };
+  //Currency conversion option now does nothing to avoid accidental user error
+  //(also to avoid mishaps with player curiosity for 'what does this button do?')
+  //The answer is nothing. The button does nothing now
+  DND5E.currencyConversion = {
+  };
+  
+
 //Character sheets
 class ME5eCharacterSheet extends ActorSheet5eCharacter {
 	static get defaultOptions() {
