@@ -196,11 +196,12 @@
   .me5e.dnd5e .form-header {
     margin: 0 0 0.25em 0;
     padding: 2px 0;
-    border-top: 2px groove #372e29;
-    border-bottom: 2px groove #372e29;
+    border-top: 2px groove #179c72;
+    border-bottom: 2px groove #179c72;
     font-family: "Oxanium Bold";
     font-size: 15px;
     font-weight: 700;
+    color: #179c72;
   }
   .me5e.dnd5e .tag {
     display: inline-block;
@@ -1161,7 +1162,7 @@
     flex: 0 0 120px;
     margin: 5px 5px 5px 0;
     padding-right: 5px;
-    border-right: 2px groove #372e29;
+    border-right: 2px solid #179c72;
   }
   .me5e.dnd5e.sheet.item .sheet-body .item-properties .form-group {
     margin: 0;
@@ -1171,6 +1172,7 @@
   }
   .me5e.dnd5e.sheet.item .sheet-body .item-properties .form-group input {
     text-align: right;
+    color: #179c72;
   }
   .me5e.dnd5e.sheet.item .sheet-body .item-properties .properties-list {
     list-style: none;
@@ -1181,7 +1183,8 @@
     margin: 3px 0;
     padding: 0 2px;
     background: rgba(0, 0, 0, 0.05);
-    border: 2px groove #372e29;
+    border: 2px solid #179c72;
+    color: #179c72;
     text-align: center;
     font-size: 12px;
     line-height: 18px;
@@ -1189,7 +1192,8 @@
   .me5e.dnd5e.sheet.item .details input[type="text"],
   .me5e.dnd5e.sheet.item .details select {
     height: 24px;
-    border: 1px solid #b2b2b2;
+    border: 1px solid #179c72;
+    color: #179c72;
     background: rgba(0, 0, 0, 0.05);
   }
   .me5e.dnd5e.sheet.item .details .form-group span {
@@ -1513,8 +1517,8 @@
   /*  Basic Structure                          */
   /* ----------------------------------------- */
   .me5e.dnd5e.sheet.actor.npc {
-    min-width: 600px;
-    min-height: 680px;
+    min-width: 614px;
+    min-height: 705px;
   }
   .me5e.dnd5e.sheet.actor.npc .header-exp {
     flex: 0 0 80px;

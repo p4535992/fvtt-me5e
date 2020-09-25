@@ -12,15 +12,16 @@
     * Paragon
     * Renegade
 * Compendiums:
+    * Bestiary
     * Backgrounds
     * Classes (with subclasses)
     * Class Features (with subclass features)
     * Feats
-    * Item Catalogue (with: weapons, weapon mods, armor mods, grenades, programs, and more)
+    * Item Catalogue (with: armor, weapons, weapon mods, armor mods, grenades, programs, and more)
     * Racial Features
     * Spells
     * Vehicles
 
-(NOTE: Races from ME5e are copyright infringing and will not be included in this module)
+(NOTE: Races from ME5e are copyright infringing and will not be included in this module. Similarly, any copyright infringing entries have been left out of the Bestiary and will not be added.)
 
 ![Image](https://github.com/sparkcity/fvttprojects/blob/master/screenshots/me5e.png?raw=true "ME5e Overview")

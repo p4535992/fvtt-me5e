@@ -1,6 +1,8 @@
 import Actor5e from "/systems/dnd5e/module/actor/entity.js";
 import { DND5E } from '/systems/dnd5e/module/config.js';
 import ActorSheet5eCharacter from "/systems/dnd5e/module/actor/sheets/character.js";
+import  ActorSheet5eNPC from "/systems/dnd5e/module/actor/sheets/npc.js";
+import  ItemSheet5e from "/systems/dnd5e/module/item/sheet.js";
 
 //Changing out deprecated 5e skills to their replacements
 DND5E.skills["arc"] = "Electronics";
@@ -119,8 +121,7 @@ class ME5eCharacterSheet extends ActorSheet5eCharacter {
 	}
   }
 
-//Registering ME5e character sheet theme options
-	console.log(`Registering character sheets for ME5e Module`);
+  console.log(`Registering character sheets for ME5e Module`);
 
 	Actors.registerSheet("dnd5e", ME5eCharacterSheet, { 
 		types: ["character"],
@@ -135,6 +136,29 @@ class ME5eCharacterSheet extends ActorSheet5eCharacter {
 	Actors.registerSheet("dnd5e", ME5eRenegadeCharacterSheet, { 
 		types: ["character"],
 		makeDefault: false 
+	});
+//Other sheets
+	class ME5eNPCSheet extends ActorSheet5eNPC {
+		static get defaultOptions() {
+		  const options = super.defaultOptions;
+		  options.classes.push('me5e');
+		  return options;
+		}
+	  }
+	Actors.registerSheet("dnd5e", ME5eNPCSheet, { 
+		types: ["npc"],
+		makeDefault: true 
+	});
+	class ME5eItemSheet extends ItemSheet5e {
+		static get defaultOptions() {
+			const options = super.defaultOptions;
+			options.classes.push('me5e');
+			return options;
+		}
+	}	
+	Items.registerSheet("dnd5e", ME5eItemSheet, { 
+		types: ["spell","weapon","equipment","loot","tool","backpack","consumable","class","feat"],
+		makeDefault: true 
 	});
 
 //Adding a field to the header for shield tracker
