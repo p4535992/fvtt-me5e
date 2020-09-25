@@ -510,6 +510,10 @@
   .renegade.dnd5e.sheet.actor .attributes input.temphp {
     width: 48%;
   }
+
+  .renegade.dnd5e.sheet.actor .attributes input.regen {
+    width: 100%;
+  }
   /* change text color for: header and attributes titles */
   .renegade.dnd5e.sheet.actor h4.box-title {
     height: 18px;
@@ -1351,7 +1355,7 @@
   /*  Basic Structure                          */
   /* ----------------------------------------- */
   .renegade.dnd5e.sheet.actor.character {
-    min-width: 782px;
+    min-width: 835px;
     min-height: 705px;
     /* ----------------------------------------- */
     /*  Sheet Header                             */

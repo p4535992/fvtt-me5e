@@ -1,6 +1,8 @@
 import Actor5e from "/systems/dnd5e/module/actor/entity.js";
 import { DND5E } from '/systems/dnd5e/module/config.js';
 import ActorSheet5eCharacter from "/systems/dnd5e/module/actor/sheets/character.js";
+import  ActorSheet5eNPC from "/systems/dnd5e/module/actor/sheets/npc.js";
+import  ItemSheet5e from "/systems/dnd5e/module/item/sheet.js";
 
 //Changing out deprecated 5e skills to their replacements
 DND5E.skills["arc"] = "Electronics";
@@ -12,7 +14,9 @@ DND5E.skills["veh"] = "Vehicle Handling";
 DND5E.equipmentTypes["prog"] = "Program";
 DND5E.equipmentTypes["armMod"] = "Armor Mod";
 DND5E.equipmentTypes["wepMod"] = "Weapon Mod";
-//Adding consumable types
+DND5E.equipmentTypes["bodArm"] = "Body Armor";
+
+//Changing and adding consumable types
 DND5E.consumableTypes["wand"] = "Single-Use Program";
 DND5E.consumableTypes["rod"] = "Grenade";
 DND5E.consumableTypes["narc"] = "Narcotic";
@@ -23,13 +27,17 @@ const prep = Actor5e.prototype.prepareBaseData;
 function extendActorData() {
 	if(this.data.type === "npc" || this.data.type === "character") {
 		const skl = this.data.data.skills;
+		const health = this.data.data.attributes.hp;
 		skl["veh"] = skl["veh"] || {value: 0, ability: "dex"};
+		health["shields"] = health["shields"] || 0;
+		health["shieldsMax"] = health["shieldsMax"] || 0;
+		health["shieldsRegen"] = health["shieldsRegen"] || 0;
 	}
 	return prep.call(this);
 }
 Actor5e.prototype.prepareBaseData = extendActorData;
 
-//Adding "schools" of magic
+//Changing "schools" of magic
 DND5E.spellSchools["abj"] = "Biotics";
 DND5E.spellSchools["con"] = "Tech";
 DND5E.spellSchools["div"] = "Combat Powers";
@@ -60,6 +68,12 @@ DND5E.currencies = {
   //The answer is nothing. The button does nothing now
   DND5E.currencyConversion = {
   };
+
+//Adding condition types
+DND5E.conditionTypes["indoctrinated"] = "Indoctrinated";
+DND5E.conditionTypes["lifted"] = "Lifted";
+DND5E.conditionTypes["primed"] = "Primed";
+DND5E.conditionTypes["targeting"] = "Targeting";
 
 //Changing and adding some tool proficiencies
 DND5E.toolProficiencies["herb"]="Chemist's Supplies";
@@ -107,12 +121,11 @@ class ME5eCharacterSheet extends ActorSheet5eCharacter {
 	}
   }
 
-//Registering ME5e character sheet theme options
-	console.log(`Initializing character sheets for ME5e Module`);
+  console.log(`Registering character sheets for ME5e Module`);
 
 	Actors.registerSheet("dnd5e", ME5eCharacterSheet, { 
 		types: ["character"],
-		makeDefault: false 
+		makeDefault: true 
 	});
 
 	Actors.registerSheet("dnd5e", ME5eParagonCharacterSheet, { 
@@ -124,3 +137,44 @@ class ME5eCharacterSheet extends ActorSheet5eCharacter {
 		types: ["character"],
 		makeDefault: false 
 	});
+//Other sheets
+	class ME5eNPCSheet extends ActorSheet5eNPC {
+		static get defaultOptions() {
+		  const options = super.defaultOptions;
+		  options.classes.push('me5e');
+		  return options;
+		}
+	  }
+	Actors.registerSheet("dnd5e", ME5eNPCSheet, { 
+		types: ["npc"],
+		makeDefault: true 
+	});
+	class ME5eItemSheet extends ItemSheet5e {
+		static get defaultOptions() {
+			const options = super.defaultOptions;
+			options.classes.push('me5e');
+			return options;
+		}
+	}	
+	Items.registerSheet("dnd5e", ME5eItemSheet, { 
+		types: ["spell","weapon","equipment","loot","tool","backpack","consumable","class","feat"],
+		makeDefault: true 
+	});
+
+//Adding a field to the header for shield tracker
+Hooks.on("renderActorSheet", (app, html, data) => {
+	const healthdiv = html.find("header.sheet-header").find("ul.attributes.flexrow");
+	healthdiv.prepend(`
+		  		<li class="attribute shields">
+                    <h4 class="attribute-name box-title">Shields</h4>
+                    <div class="attribute-value multiple">
+                        <input name="data.attributes.hp.shields" type="text" value="${data.data.attributes.hp.shields}" data-dtype="${data.data.attributes.hp.type}" placeholder="5"/>
+                        <span class="sep"> / </span>
+                        <input name="data.attributes.hp.shieldsMax" type="text" value="${data.data.attributes.hp.shieldsMax}" data-dtype="${data.data.attributes.hp.type}" placeholder="5"/>
+                    </div>
+                    <footer class="attribute-footer">
+                        <input name="data.attributes.hp.shieldsRegen" type="text" class="shieldsRegen" placeholder="Shield Regen." value="${data.data.attributes.hp.shieldsRegen}" data-dtype="${data.data.attributes.hp.type}"/>
+                    </footer>
+                </li>
+	  `);
+});
