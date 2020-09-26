@@ -1,8 +1,8 @@
-import Actor5e from "/systems/dnd5e/module/actor/entity.js";
-import { DND5E } from '/systems/dnd5e/module/config.js';
-import ActorSheet5eCharacter from "/systems/dnd5e/module/actor/sheets/character.js";
-import  ActorSheet5eNPC from "/systems/dnd5e/module/actor/sheets/npc.js";
-import  ItemSheet5e from "/systems/dnd5e/module/item/sheet.js";
+import Actor5e from "../../../systems/dnd5e/module/actor/entity.js";
+import { DND5E } from '"../../../systems/dnd5e/module/config.js';
+import ActorSheet5eCharacter from "../../../systems/dnd5e/module/actor/sheets/character.js";
+import  ActorSheet5eNPC from "../../../systems/dnd5e/module/actor/sheets/npc.js";
+import  ItemSheet5e from "../../../systems/dnd5e/module/item/sheet.js";
 
 //Changing out deprecated 5e skills to their replacements
 DND5E.skills["arc"] = "Electronics";
