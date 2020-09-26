@@ -184,8 +184,6 @@ Hooks.on("renderActorSheet", (app, html, data) => {
                 </li>
 	  `);
 
-	  Actor5e.prototype.prepareBaseData = extendActorData;
-
  	const skillslist = html.find("section.sheet-body").find("ul.skills-list");
 	skillslist.append(`
 		<li class="skill flexrow veh" data-skill="dex">
