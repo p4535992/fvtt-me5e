@@ -20,6 +20,13 @@
   /* ----------------------------------------- */
   /*  Flexbox                                  */
   /* ----------------------------------------- */
+  input.customskill {
+    width: 20px;
+  }
+  .renegade.dnd5e.sheet.actor ul.skills-list li.skill .skill-mod.custom {
+    flex: 0 0 50px;
+  }
+
   .flexrow {
     display: flex;
     flex-direction: row;
