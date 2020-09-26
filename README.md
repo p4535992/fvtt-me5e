@@ -22,6 +22,12 @@
     * Spells
     * Vehicles
 
+## Compatibilities:
+* Compact DnDBeyond 5e Character Sheet
+
+## Incompatibilities:
+* Tidy5e Sheet
+
 (NOTE: Races from ME5e are copyright infringing and will not be included in this module. Similarly, any copyright infringing entries have been left out of the Bestiary and will not be added.)
 
 ![Image](https://github.com/sparkcity/fvttprojects/blob/master/screenshots/me5e.png?raw=true "ME5e Overview")
