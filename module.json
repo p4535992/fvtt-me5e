@@ -69,10 +69,10 @@
 			"entity": "Item"
 		},
 		{
-			"name": "vehicles-me5e",
+			"name": "vehiclesme5e",
 			"label": "Vehicles (ME5e)",
 			"system": "dnd5e",
-			"path": "./packs/vehicles-me5e.db",
+			"path": "./packs/vehiclesme5e.db",
 			"entity": "Actor"
 		}
 	  ],
@@ -86,7 +86,11 @@
 
 	"system": "dnd5e",
 	"author": "Parker (sparkcities#2000)",
+<<<<<<< Updated upstream
 	"version": "1.3.0",
+=======
+	"version": "1.7.1",
+>>>>>>> Stashed changes
 	"minimumCoreVersion": "0.6.5",
 	"compatibleCoreVersion": "0.6.6",
 	"url": "https://github.com/sparkcity/fvtt-me5e",
