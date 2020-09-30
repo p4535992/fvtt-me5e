@@ -1,14 +1,13 @@
-import Actor5e from "/systems/dnd5e/module/actor/entity.js";
-import { DND5E } from '/systems/dnd5e/module/config.js';
-import ActorSheet5eCharacter from "/systems/dnd5e/module/actor/sheets/character.js";
-import  ActorSheet5eNPC from "/systems/dnd5e/module/actor/sheets/npc.js";
-import  ItemSheet5e from "/systems/dnd5e/module/item/sheet.js";
+import Actor5e from "../../../systems/dnd5e/module/actor/entity.js";
+import { DND5E } from '../../../systems/dnd5e/module/config.js';
+import ActorSheet5eCharacter from "../../../systems/dnd5e/module/actor/sheets/character.js";
+import ActorSheet5eNPC from "../../../systems/dnd5e/module/actor/sheets/npc.js";
+import ItemSheet5e from "../../../systems/dnd5e/module/item/sheet.js";
 
 //Changing out deprecated 5e skills to their replacements
 DND5E.skills["arc"] = "Electronics";
 DND5E.skills["nat"] = "Engineering";
 DND5E.skills["rel"] = "Science";
-DND5E.skills["veh"] = "Vehicle Handling";
 
 //Adding equipment types
 DND5E.equipmentTypes["prog"] = "Program";
@@ -21,18 +20,25 @@ DND5E.consumableTypes["wand"] = "Single-Use Program";
 DND5E.consumableTypes["rod"] = "Grenade";
 DND5E.consumableTypes["narc"] = "Narcotic";
 
-//Add vehicle handling to the character sheet as a skill if, and only if, the actor entities being created are of type
-//character or npc. If the type is vehicle, it makes no changes.
-const prep = Actor5e.prototype.prepareBaseData;	
+const prep = Actor5e.prototype.prepareBaseData;
 function extendActorData() {
-	if(this.data.type === "npc" || this.data.type === "character") {
-		const skl = this.data.data.skills;
-		const health = this.data.data.attributes.hp;
-		skl["veh"] = skl["veh"] || {value: 0, ability: "dex"};
+	const dat = this.data.data;
+	dat["newskills"] = dat["newskills"] || 
+	{ "veh": 
+		{
+			total: ''
+		}
+	};
+
+	const health = this.data.data.attributes.hp;
+	
+	if (this.data.type === "npc" || this.data.type === "character") {
 		health["shields"] = health["shields"] || 0;
 		health["shieldsMax"] = health["shieldsMax"] || 0;
 		health["shieldsRegen"] = health["shieldsRegen"] || 0;
+		console.log(this);
 	}
+
 	return prep.call(this);
 }
 Actor5e.prototype.prepareBaseData = extendActorData;
@@ -62,12 +68,12 @@ DND5E.weaponProperties["coi"] = "Recoil";
 //Changing currencies, all other currencies appear as 0 with no labels
 DND5E.currencies = {
 	"pp": "Credits"
-  };
-  //Currency conversion option now does nothing to avoid accidental user error
-  //(also to avoid mishaps with player curiosity for 'what does this button do?')
-  //The answer is nothing. The button does nothing now
-  DND5E.currencyConversion = {
-  };
+};
+//Currency conversion option now does nothing to avoid accidental user error
+//(also to avoid mishaps with player curiosity for 'what does this button do?')
+//The answer is nothing. The button does nothing now
+DND5E.currencyConversion = {
+};
 
 //Adding condition types
 DND5E.conditionTypes["indoctrinated"] = "Indoctrinated";
@@ -76,90 +82,90 @@ DND5E.conditionTypes["primed"] = "Primed";
 DND5E.conditionTypes["targeting"] = "Targeting";
 
 //Changing and adding some tool proficiencies
-DND5E.toolProficiencies["herb"]="Chemist's Supplies";
-DND5E.toolProficiencies["navg"]="Starship System (Navigation)";
-DND5E.toolProficiencies["pois"]="Brewer's Supplies"
-DND5E.toolProficiencies["aswb"]="Armorsmith's Workbench";
-DND5E.toolProficiencies["cook"]="Cook's Utensils";
-DND5E.toolProficiencies["h4ck"]="Hacking Tools";
-DND5E.toolProficiencies["mdcn"]="Medical Kit";
-DND5E.toolProficiencies["pntr"]="Painter's Supplies";
-DND5E.toolProficiencies["ssdr"]="Starship Systems (Drive)";
-DND5E.toolProficiencies["sshe"]="Starship Systems (Helm)";
-DND5E.toolProficiencies["sssc"]="Starship Systems (SSC)";
-DND5E.toolProficiencies["ssew"]="Starship Systems (EWS)";
-DND5E.toolProficiencies["sswp"]="Starship Systems (Weapons)";
-DND5E.toolProficiencies["tail"]="Tailor's Tools";
-DND5E.toolProficiencies["tink"]="Tinker's Tools";
-DND5E.toolProficiencies["wswb"]="Weaponsmith's Workbench";
+DND5E.toolProficiencies["herb"] = "Chemist's Supplies";
+DND5E.toolProficiencies["navg"] = "Starship System (Navigation)";
+DND5E.toolProficiencies["pois"] = "Brewer's Supplies"
+DND5E.toolProficiencies["aswb"] = "Armorsmith's Workbench";
+DND5E.toolProficiencies["cook"] = "Cook's Utensils";
+DND5E.toolProficiencies["h4ck"] = "Hacking Tools";
+DND5E.toolProficiencies["mdcn"] = "Medical Kit";
+DND5E.toolProficiencies["pntr"] = "Painter's Supplies";
+DND5E.toolProficiencies["ssdr"] = "Starship Systems (Drive)";
+DND5E.toolProficiencies["sshe"] = "Starship Systems (Helm)";
+DND5E.toolProficiencies["sssc"] = "Starship Systems (SSC)";
+DND5E.toolProficiencies["ssew"] = "Starship Systems (EWS)";
+DND5E.toolProficiencies["sswp"] = "Starship Systems (Weapons)";
+DND5E.toolProficiencies["tail"] = "Tailor's Tools";
+DND5E.toolProficiencies["tink"] = "Tinker's Tools";
+DND5E.toolProficiencies["wswb"] = "Weaponsmith's Workbench";
 
 //Character sheets
 class ME5eCharacterSheet extends ActorSheet5eCharacter {
 	static get defaultOptions() {
-	  console.log("~~~~~~~~~~~ME5E CHARACTER SHEET ACTIVE~~~~~~~~~~~");
-	  const options = super.defaultOptions;
-	  options.classes.push('me5e');
-	  return options;
+		console.log("~~~~~~~~~~~ME5E CHARACTER SHEET ACTIVE~~~~~~~~~~~");
+		const options = super.defaultOptions;
+		options.classes.push('me5e');
+		return options;
 	}
-  }
+}
 
-  class ME5eParagonCharacterSheet extends ActorSheet5eCharacter {
+class ME5eParagonCharacterSheet extends ActorSheet5eCharacter {
 	static get defaultOptions() {
-	  console.log("~~~~~~~~~~~PARAGON CHARACTER SHEET ACTIVE~~~~~~~~~~~");
-	  const options = super.defaultOptions;
-	  options.classes.push('paragon');
-	  return options;
+		console.log("~~~~~~~~~~~PARAGON CHARACTER SHEET ACTIVE~~~~~~~~~~~");
+		const options = super.defaultOptions;
+		options.classes.push('paragon');
+		return options;
 	}
-  }
+}
 
-  class ME5eRenegadeCharacterSheet extends ActorSheet5eCharacter {
+class ME5eRenegadeCharacterSheet extends ActorSheet5eCharacter {
 	static get defaultOptions() {
-	  console.log("~~~~~~~~~~~RENEGADE CHARACTER SHEET ACTIVE~~~~~~~~~~~");
-	  const options = super.defaultOptions;
-	  options.classes.push('renegade');
-	  return options;
+		console.log("~~~~~~~~~~~RENEGADE CHARACTER SHEET ACTIVE~~~~~~~~~~~");
+		const options = super.defaultOptions;
+		options.classes.push('renegade');
+		return options;
 	}
-  }
+}
 
-  console.log(`Registering character sheets for ME5e Module`);
+console.log(`Registering character sheets for ME5e Module`);
 
-	Actors.registerSheet("dnd5e", ME5eCharacterSheet, { 
-		types: ["character"],
-		makeDefault: true 
-	});
+Actors.registerSheet("dnd5e", ME5eCharacterSheet, {
+	types: ["character"],
+	makeDefault: true
+});
 
-	Actors.registerSheet("dnd5e", ME5eParagonCharacterSheet, { 
-		types: ["character"],
-		makeDefault: false 
-	});
+Actors.registerSheet("dnd5e", ME5eParagonCharacterSheet, {
+	types: ["character"],
+	makeDefault: false
+});
 
-	Actors.registerSheet("dnd5e", ME5eRenegadeCharacterSheet, { 
-		types: ["character"],
-		makeDefault: false 
-	});
+Actors.registerSheet("dnd5e", ME5eRenegadeCharacterSheet, {
+	types: ["character"],
+	makeDefault: false
+});
 //Other sheets
-	class ME5eNPCSheet extends ActorSheet5eNPC {
-		static get defaultOptions() {
-		  const options = super.defaultOptions;
-		  options.classes.push('me5e');
-		  return options;
-		}
-	  }
-	Actors.registerSheet("dnd5e", ME5eNPCSheet, { 
-		types: ["npc"],
-		makeDefault: true 
-	});
-	class ME5eItemSheet extends ItemSheet5e {
-		static get defaultOptions() {
-			const options = super.defaultOptions;
-			options.classes.push('me5e');
-			return options;
-		}
-	}	
-	Items.registerSheet("dnd5e", ME5eItemSheet, { 
-		types: ["spell","weapon","equipment","loot","tool","backpack","consumable","class","feat"],
-		makeDefault: true 
-	});
+class ME5eNPCSheet extends ActorSheet5eNPC {
+	static get defaultOptions() {
+		const options = super.defaultOptions;
+		options.classes.push('me5e');
+		return options;
+	}
+}
+Actors.registerSheet("dnd5e", ME5eNPCSheet, {
+	types: ["npc"],
+	makeDefault: true
+});
+class ME5eItemSheet extends ItemSheet5e {
+	static get defaultOptions() {
+		const options = super.defaultOptions;
+		options.classes.push('me5e');
+		return options;
+	}
+}
+Items.registerSheet("dnd5e", ME5eItemSheet, {
+	types: ["spell", "weapon", "equipment", "loot", "tool", "backpack", "consumable", "class", "feat"],
+	makeDefault: true
+});
 
 //Adding a field to the header for shield tracker
 Hooks.on("renderActorSheet", (app, html, data) => {
@@ -177,4 +183,14 @@ Hooks.on("renderActorSheet", (app, html, data) => {
                     </footer>
                 </li>
 	  `);
+
+ 	const skillslist = html.find("section.sheet-body").find("ul.skills-list");
+	skillslist.append(`
+		<li class="skill flexrow veh" data-skill="dex">
+			<input type="hidden" name="data.newskills.veh.value" data-dtype="Number">
+			<h4 class="skill-name">Vehicle Handling</h4>
+			<span class="skill-ability custom">Dex</span>
+			<span class="skill-mod custom"><input name="data.newskills.veh.total" type="text" value="${data.data.newskills.veh.total}" data-dtype="Text" placeholder="+0"/></span>
+		</li>
+	`); 
 });

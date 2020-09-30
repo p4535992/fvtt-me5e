@@ -21,6 +21,13 @@
   /*  Flexbox                                  */
   /* ----------------------------------------- */
 
+  input.customskill {
+    width: 20px;
+  }
+  .me5e.dnd5e.sheet.actor ul.skills-list li.skill .skill-mod.custom {
+    flex: 0 0 50px;
+  }
+
   body {
     width: 100vw;
     height: 100vh;
@@ -592,7 +599,8 @@
     font-size: 24px;
   }
   .me5e.dnd5e.sheet.actor ul.attributes li.attribute .attribute-value.multiple input {
-    flex: 0 0 33%;
+    flex: 0 0 40%;
+    font-size: 18px;
   }
   /*change color for: spell dc text, modifier text*/
   .me5e.dnd5e.sheet.actor ul.attributes li.attribute .attribute-footer {
