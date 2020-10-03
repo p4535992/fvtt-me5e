@@ -193,7 +193,8 @@
     line-height: 16px;
     border: 1px solid #999;
     border-radius: 3px;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.30);
+    color:#999;
   }
   /* ----------------------------------------- */
   /*  Entity Sheets Specifically               */
@@ -1479,15 +1480,15 @@
   }
   .renegade.dnd5e.sheet.actor.character .inventory .item-controls .item-toggle,
   .renegade.dnd5e.sheet.actor.character .spellbook .item-controls .item-toggle {
-    color: #bdbdbd;
+    color: #797979;
   }
   .renegade.dnd5e.sheet.actor.character .inventory .item-controls .item-toggle.active,
   .renegade.dnd5e.sheet.actor.character .spellbook .item-controls .item-toggle.active {
-    color: #797979;
+    color: #ffffff;
   }
   .renegade.dnd5e.sheet.actor.character .inventory .item-controls .item-toggle.fixed,
   .renegade.dnd5e.sheet.actor.character .spellbook .item-controls .item-toggle.fixed {
-    color: #383838;
+    color: #ffa500;
   }
   .renegade.dnd5e.sheet.actor.character .inventory .item-controls .item-toggle.fixed:hover,
   .renegade.dnd5e.sheet.actor.character .spellbook .item-controls .item-toggle.fixed:hover {

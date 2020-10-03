@@ -218,7 +218,8 @@
     line-height: 16px;
     border: 1px solid #999;
     border-radius: 3px;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.3);
+    color: #999;
   }
   /* ----------------------------------------- */
   /*  Entity Sheets Specifically               */
@@ -1507,15 +1508,15 @@
   }
   .me5e.dnd5e.sheet.actor.character .inventory .item-controls .item-toggle,
   .me5e.dnd5e.sheet.actor.character .spellbook .item-controls .item-toggle {
-    color: #bdbdbd;
+    color: #797979;
   }
   .me5e.dnd5e.sheet.actor.character .inventory .item-controls .item-toggle.active,
   .me5e.dnd5e.sheet.actor.character .spellbook .item-controls .item-toggle.active {
-    color: #797979;
+    color: #ffffff;
   }
   .me5e.dnd5e.sheet.actor.character .inventory .item-controls .item-toggle.fixed,
   .me5e.dnd5e.sheet.actor.character .spellbook .item-controls .item-toggle.fixed {
-    color: #383838;
+    color: #ffa500;
   }
   .me5e.dnd5e.sheet.actor.character .inventory .item-controls .item-toggle.fixed:hover,
   .me5e.dnd5e.sheet.actor.character .spellbook .item-controls .item-toggle.fixed:hover {
