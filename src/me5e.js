@@ -193,4 +193,21 @@ Hooks.on("renderActorSheet", (app, html, data) => {
 			<span class="skill-mod custom"><input name="data.newskills.veh.total" type="text" value="${data.data.newskills.veh.total}" data-dtype="Text" placeholder="+0"/></span>
 		</li>
 	`); 
+
+	const counters = html.find("div.counters");
+	const flags = data.actor.flags.me5e || {};
+	counters.append(`
+	<div class="counter flexrow paragon">
+    <h4>Paragon</h4>
+    <div class="counter-value">
+      <input type="text" name="flags.me5e.paragon" placeholder="0" value="${flags.paragon ?? 0}" data-dtype="Number"/>
+    </div>
+	</div>
+	<div class="counter flexrow renegade">
+    <h4>Renegade</h4>
+    <div class="counter-value">
+      <input type="text" name="flags.me5e.renegade" placeholder="0" value="${flags.renegade ?? 0}" data-dtype="Number"/>
+    </div>
+	</div>
+	`);
 });

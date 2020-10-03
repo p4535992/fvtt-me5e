@@ -194,7 +194,8 @@
     line-height: 16px;
     border: 1px solid #999;
     border-radius: 3px;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.3);
+    color: #999;
   }
   /* ----------------------------------------- */
   /*  Entity Sheets Specifically               */
@@ -1126,7 +1127,7 @@
     margin: 0;
   }
   .paragon.dnd5e.sheet.item .sheet-header .item-subtitle .item-status {
-    font-size: 16px;
+    font-size: 13px;
     line-height: 24px;
   }
   .paragon.dnd5e.sheet.item .sheet-navigation {
@@ -1481,15 +1482,15 @@
   }
   .paragon.dnd5e.sheet.actor.character .inventory .item-controls .item-toggle,
   .paragon.dnd5e.sheet.actor.character .spellbook .item-controls .item-toggle {
-    color: #bdbdbd;
+    color: #797979;
   }
   .paragon.dnd5e.sheet.actor.character .inventory .item-controls .item-toggle.active,
   .paragon.dnd5e.sheet.actor.character .spellbook .item-controls .item-toggle.active {
-    color: #797979;
+    color: #ffffff;
   }
   .paragon.dnd5e.sheet.actor.character .inventory .item-controls .item-toggle.fixed,
   .paragon.dnd5e.sheet.actor.character .spellbook .item-controls .item-toggle.fixed {
-    color: #383838;
+    color: #ffa500;
   }
   .paragon.dnd5e.sheet.actor.character .inventory .item-controls .item-toggle.fixed:hover,
   .paragon.dnd5e.sheet.actor.character .spellbook .item-controls .item-toggle.fixed:hover {
