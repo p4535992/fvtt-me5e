@@ -86,11 +86,7 @@
 
 	"system": "dnd5e",
 	"author": "Parker (sparkcities#2000)",
-<<<<<<< Updated upstream
-	"version": "1.7.4",
-=======
-	"version": "1.8.0",
->>>>>>> Stashed changes
+	"version": "1.8.1",
 	"minimumCoreVersion": "0.6.5",
 	"compatibleCoreVersion": "0.7.5",
 	"url": "https://github.com/sparkcity/fvtt-me5e",
