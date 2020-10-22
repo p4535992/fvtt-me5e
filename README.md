@@ -1,7 +1,8 @@
-[![Foundry](https://img.shields.io/badge/Foundry-0.6.5-green)](https://foundryvtt.com/)
+[![Foundry](https://img.shields.io/badge/Foundry%40Minimum-0.6.6-green)](https://foundryvtt.com/)
+[![Foundry](https://img.shields.io/badge/Foundry%40CompatibleCore-0.7.5-brightgreen)](https://foundryvtt.com/)
+[![DND5E](https://img.shields.io/badge/DnD5E-0.98-orange)](https://gitlab.com/foundrynet/dnd5e)
 ![GitHub All Releases](https://img.shields.io/github/downloads/sparkcity/fvtt-me5e/total)
 ![GitHub @Latest](https://img.shields.io/github/downloads/sparkcity/fvtt-me5e/latest/total)
-
 
 ## Attributions
 * Icons are from [Game-icons.net](https://game-icons.net/). Specifically: Missile launcher icon by Delapouite; Pistol gun icon by John Colburn; Sawed-off shotgun icon by Delapouite; MP5 by Delapouite; Uzi icon by Delapouite; CPU icon by Delapouite; Battle gear icon by Lorc; Silver bullet icon by Delapouite; Scout ship icon by Delapouite; Bracer icon by Delapouite; Greaves icon by Delapouite; Barbute icon by Lorc; Shoulder armor icon by Delapouite.
@@ -23,12 +24,6 @@
     * Racial Features
     * Spells
     * Vehicles
-
-## Compatibilities:
-* Compact DnDBeyond 5e Character Sheet
-
-## Incompatibilities:
-* Tidy5e Sheet
 
 (NOTE: Races from ME5e are copyright infringing and will not be included in this module. Similarly, any copyright infringing entries have been left out of the Bestiary and will not be added.)
 

@@ -1537,7 +1537,7 @@
     flex: 0 0 32px;
     line-height: 28px;
     margin-bottom: -5px;
-    font-size: 24px;
+    font-size: 20px;
   }
   .me5e.dnd5e.sheet.actor.npc .header-exp .cr input {
     width: 32px;
@@ -1576,3 +1576,21 @@
     text-align: right;
   }
   
+  /* Characteristics */
+
+.me5e.dnd5e.sheet.actor.character .characteristics label {
+    flex: 0 0 20px;
+    font-family: "Oxanium Bold";
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 20px;
+    text-align: center;
+    color: #179c72;
+}
+
+.me5e.dnd5e.sheet.actor.character .characteristics textarea {
+  font-family: "Signika", serif;
+  border: 1px solid #179c72;
+  resize: none;
+  color: #bed0ca;
+}

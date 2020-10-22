@@ -1511,7 +1511,7 @@
     flex: 0 0 32px;
     line-height: 28px;
     margin-bottom: -5px;
-    font-size: 24px;
+    font-size: 20px;
   }
   .paragon.dnd5e.sheet.actor.npc .header-exp .cr input {
     width: 32px;
@@ -1549,4 +1549,22 @@
     max-width: 40px;
     text-align: right;
   }
-  
+
+/* Characteristics */
+
+.paragon.dnd5e.sheet.actor.character .characteristics label {
+    flex: 0 0 20px;
+    font-family: "Oxanium Bold";
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 20px;
+    text-align: center;
+    color:  #41a9ea;
+}
+
+.paragon.dnd5e.sheet.actor.character .characteristics textarea {
+  font-family: "Signika", serif;
+  border: 1px solid #3d96cf;
+  resize: none;
+  color: #bed0ca;
+}

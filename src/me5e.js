@@ -26,7 +26,7 @@ function extendActorData() {
 	dat["newskills"] = dat["newskills"] || 
 	{ "veh": 
 		{
-			total: ''
+			value: ''
 		}
 	};
 
@@ -36,7 +36,6 @@ function extendActorData() {
 		health["shields"] = health["shields"] || 0;
 		health["shieldsMax"] = health["shieldsMax"] || 0;
 		health["shieldsRegen"] = health["shieldsRegen"] || 0;
-		console.log(this);
 	}
 
 	return prep.call(this);
@@ -174,12 +173,12 @@ Hooks.on("renderActorSheet", (app, html, data) => {
 		  		<li class="attribute shields">
                     <h4 class="attribute-name box-title">Shields</h4>
                     <div class="attribute-value multiple">
-                        <input name="data.attributes.hp.shields" type="text" value="${data.data.attributes.hp.shields}" data-dtype="${data.data.attributes.hp.type}" placeholder="5"/>
+                        <input name="data.attributes.hp.shields" type="text" value="${data.data.attributes.hp.shields}" data-dtype="Number" placeholder="5"/>
                         <span class="sep"> / </span>
-                        <input name="data.attributes.hp.shieldsMax" type="text" value="${data.data.attributes.hp.shieldsMax}" data-dtype="${data.data.attributes.hp.type}" placeholder="5"/>
+                        <input name="data.attributes.hp.shieldsMax" type="text" value="${data.data.attributes.hp.shieldsMax}" data-dtype="Number" placeholder="5"/>
                     </div>
                     <footer class="attribute-footer">
-                        <input name="data.attributes.hp.shieldsRegen" type="text" class="shieldsRegen" placeholder="Shield Regen." value="${data.data.attributes.hp.shieldsRegen}" data-dtype="${data.data.attributes.hp.type}"/>
+                        <input name="data.attributes.hp.shieldsRegen" type="text" class="shieldsRegen" placeholder="Shield Regen." value="${data.data.attributes.hp.shieldsRegen}" data-dtype="Number"/>
                     </footer>
                 </li>
 	  `);
@@ -190,7 +189,7 @@ Hooks.on("renderActorSheet", (app, html, data) => {
 			<input type="hidden" name="data.newskills.veh.value" data-dtype="Number">
 			<h4 class="skill-name">Vehicle Handling</h4>
 			<span class="skill-ability custom">Dex</span>
-			<span class="skill-mod custom"><input name="data.newskills.veh.total" type="text" value="${data.data.newskills.veh.total}" data-dtype="Text" placeholder="+0"/></span>
+			<span class="skill-mod custom"><input name="data.newskills.veh.total" type="text" value="${data.data.newskills.veh.total}" data-dtype="String" placeholder="+0"/></span>
 		</li>
 	`); 
 
