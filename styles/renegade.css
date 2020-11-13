@@ -78,6 +78,27 @@
     /* Form Groups */
     /* Tags */
   }
+
+  .renegade.dnd5e.sheet .items-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    color: #7a7971;
+    background-color: #831e1e;
+}
+
+.renegade.dnd5e.sheet .items-list .items-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove #cf3d3d;
+  font-weight: bold;
+  color: #bed0ca;
+}
   
   .renegade.dnd5e .window-content {
     background: url("../assets/renegadescreen.png") repeat;

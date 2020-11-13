@@ -1,6 +1,6 @@
-[![Foundry](https://img.shields.io/badge/Foundry%40Minimum-0.6.6-green)](https://foundryvtt.com/)
-[![Foundry](https://img.shields.io/badge/Foundry%40CompatibleCore-0.7.5-brightgreen)](https://foundryvtt.com/)
-[![DND5E](https://img.shields.io/badge/DnD5E-0.98-orange)](https://gitlab.com/foundrynet/dnd5e)
+[![Foundry](https://img.shields.io/badge/Foundry%40Minimum-0.7.5-green)](https://foundryvtt.com/)
+[![Foundry](https://img.shields.io/badge/Foundry%40CompatibleCore-0.7.7-brightgreen)](https://foundryvtt.com/)
+[![DND5E](https://img.shields.io/badge/DnD5E-1.1.1-orange)](https://gitlab.com/foundrynet/dnd5e)
 ![GitHub All Releases](https://img.shields.io/github/downloads/sparkcity/fvtt-me5e/total)
 ![GitHub @Latest](https://img.shields.io/github/downloads/sparkcity/fvtt-me5e/latest/total)
 
@@ -26,5 +26,8 @@
     * Vehicles
 
 (NOTE: Races from ME5e are copyright infringing and will not be included in this module. Similarly, any copyright infringing entries have been left out of the Bestiary and will not be added.)
+
+## Limitations
+Due to current limitations and a limited amount of time, there is no 'click to roll' function for the custom skill of Vehicle Handling. Instead, the place next to Vehicle Handling that says 'undefined' upon creating a new character sheet is a text box that will allow for manual tracking of what the modifier should be. Delete the 'undefined' text and replace with with whatever the modifier should be, positive or negative.
 
 ![Image](https://github.com/sparkcity/fvttprojects/blob/master/screenshots/me5e.png?raw=true "ME5e Overview")
